@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listCharacterFragment">
+
+    <fragment
+        android:id="@+id/detailsCharacterFragment"
+        android:name="com.example.marvel.ui.fragment.details.DetailsCharacterFragment"
+        android:label="fragment_details_character"
+        tools:layout="@layout/fragment_details_character" >
+        <argument
+            android:name="character"
+            app:argType="com.example.marvel.model.character.CharacterModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteChararcterFragment"
+        android:name="com.example.marvel.ui.fragment.favorite.FavoriteChararcterFragment"
+        android:label="fragment_favorite_chararcter"
+        tools:layout="@layout/fragment_favorite_chararcter" >
+        <action
+            android:id="@+id/action_favoriteChararcterFragment_to_detailsCharacterFragment"
+            app:destination="@id/detailsCharacterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listCharacterFragment"
+        android:name="com.example.marvel.ui.fragment.list.ListCharacterFragment"
+        android:label="fragment_list_character"
+        tools:layout="@layout/fragment_list_character" >
+        <action
+            android:id="@+id/action_listCharacterFragment_to_detailsCharacterFragment"
+            app:destination="@id/detailsCharacterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchCharacterFragment"
+        android:name="com.example.marvel.ui.fragment.search.SearchCharacterFragment"
+        android:label="fragment_search_character"
+        tools:layout="@layout/fragment_search_character" >
+        <action
+            android:id="@+id/action_searchCharacterFragment_to_detailsCharacterFragment"
+            app:destination="@id/detailsCharacterFragment" />
+    </fragment>
+</navigation>
